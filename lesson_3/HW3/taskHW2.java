@@ -23,18 +23,40 @@ public class taskHW2 {
         arrNum.add(11);
         arrNum.add(2);
         arrNum.add(87);
+        arrNum.add(64);
+        arrNum.add(34);
 
         System.out.println(arrNum.toString());
+
+        RemovingEvenNumbers(arrNum);
+
+        for (int i = 0; i < arrNum.size(); i++) {
+            if(arrNum.get(i)% 2 == 0){
+                arrNum.remove(i);
+            }
+        }
+        
+
+        System.out.println(arrNum.toString());
+
         int min = Collections.min(arrNum);
         int max = Collections.max(arrNum);
         arrNum.sort(null);
+        
         System.out.println(arrNum);
         System.out.println("Минимальное число: " + min);
         System.out.println("Максимальное число: " + max);
         AverageNum(arrNum);
 
         MinAveregeMaxCicle(arrNum);
+    }
 
+    private static void RemovingEvenNumbers(ArrayList<Integer> arrNum) {
+        for (int i = 0; i < arrNum.size(); i++) {
+            if(arrNum.get(i)%2==0){
+                arrNum.remove(i);
+            }
+        }
     }
 
     private static void MinAveregeMaxCicle(ArrayList<Integer> arrNum) {
@@ -50,18 +72,9 @@ public class taskHW2 {
             }
         }
 
-        int count = 0;
-        for (int i = 0; i < arrNum.size(); i++) {
-            if (min < arrNum.get(i) && max > arrNum.get(i)) {
-                averege = arrNum.get(i);
-                count++;
-            }
-            averege = arrNum.get(i - (count / 2));
-        }
-
-        System.out.println("Минимальное число arrNum: " + min);
-        System.out.println("Максимальное число arrNum: " + max);
-        System.out.println("Среднее число arrNum: " + averege);
+        System.out.println("Минимальное число: " + min);
+        System.out.println("Максимальное число: " + max);
+        AverageNum(arrNum);
     }
 
     private static void AverageNum(ArrayList<Integer> arrNum) {
