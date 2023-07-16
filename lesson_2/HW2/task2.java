@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.util.logging.*;
 
+import lesson_3.task2;
+
 public class task2 {
     public static void main(String[] args) throws IOException {
         Logger logger = Logger.getLogger(task2.class.getName());
